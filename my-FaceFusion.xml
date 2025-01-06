@@ -27,5 +27,6 @@
   <Config Name="Assets" Target="/facefusion/.assets" Default="/mnt/user/appdata/facefusion/assets" Mode="rw" Description="Path to assets (models)" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/facefusion/assets</Config>
   <Config Name="Cache" Target="/facefusion/.caches" Default="/mnt/user/appdata/facefusion/cache" Mode="rw" Description="Path to cache folder" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/facefusion/cache</Config>
   <Config Name="Jobs" Target="/facefusion/.jobs" Default="/mnt/user/appdata/facefusion/jobs" Mode="rw" Description="Path to jobs" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/facefusion/jobs</Config>
+  <Config Name="Temp" Target="/tmp" Default="/mnt/user/appdata/facefusion/tmp" Mode="rw" Description="Path to temporary data. While processing larger files the Unraid docker image might fill up." Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/facefusion/tmp</Config>
   <Config Name="NVIDIA_VISIBLE_DEVICES" Target="NVIDIA_VISIBLE_DEVICES" Default="" Mode="" Description="GPU ID" Type="Variable" Display="always" Required="false" Mask="false"></Config>GPU-xxxxx
 </Container>
