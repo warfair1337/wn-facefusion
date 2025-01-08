@@ -14,7 +14,6 @@
   <WebUI>http://[IP]:[PORT:7860]</WebUI>
   <TemplateURL/>
   <Icon/>
-  <ExtraParams>--runtime=nvidia</ExtraParams>
   <PostArgs>python /facefusion/facefusion.py run</PostArgs>
   <CPUset/>
   <DateInstalled>1735767614</DateInstalled>

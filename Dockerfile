@@ -21,3 +21,5 @@ RUN pip install tensorrt==10.6.0 --extra-index-url https://pypi.nvidia.com
 
 RUN git clone https://github.com/facefusion/facefusion.git --branch ${FACEFUSION_VERSION} --single-branch .
 RUN python install.py --onnxruntime cuda --skip-conda
+
+CMD ["python", "/facefusion/facefusion.py", "run"]
