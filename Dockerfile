@@ -11,24 +11,17 @@ ENV GRADIO_SERVER_NAME=0.0.0.0 \
 WORKDIR /facefusion
 
 # Install required system packages
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-        python3.12 \
-        python-is-python3 \
-        python3-pip \
-        git \
-        curl \
-        ffmpeg \
-        nano \
-    && python3 -m pip install --upgrade pip \
-    && rm -rf /var/lib/apt/lists/*
-
-# Install TensorRT from NVIDIA's PyPI
-RUN python3 -m pip install --upgrade pip && \
-    pip install tensorrt==10.9.0.34 --extra-index-url https://pypi.nvidia.com
+RUN apt-get update
+RUN apt-get install python3.12 -y
+RUN apt-get install python-is-python3 -y
+RUN apt-get install pip -y
+RUN apt-get install git -y
+RUN apt-get install curl -y
+RUN apt-get install ffmpeg -y
+RUN pip install tensorrt==10.9.0.34 --extra-index-url https://pypi.nvidia.com
 
 # Clone and install FaceFusion
-RUN git clone https://github.com/facefusion/facefusion.git --branch ${FACEFUSION_VERSION} --single-branch . && \
-    python install.py --onnxruntime cuda --skip-conda
+RUN git clone https://github.com/facefusion/facefusion.git --branch ${FACEFUSION_VERSION} --single-branch
+RUN python install.py --onnxruntime cuda --skip-conda
 
 CMD ["python", "/facefusion/facefusion.py", "run"]
