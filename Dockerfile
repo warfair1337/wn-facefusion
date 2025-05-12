@@ -2,7 +2,7 @@ FROM nvidia/cuda:12.8.1-cudnn-runtime-ubuntu24.04
 
 EXPOSE 7860
 
-ARG FACEFUSION_VERSION=3.1.1
+ARG FACEFUSION_VERSION=3.1.2
 
 ENV GRADIO_SERVER_NAME=0.0.0.0 \
     PIP_BREAK_SYSTEM_PACKAGES=1 \
@@ -24,7 +24,7 @@ RUN apt-get update && \
 
 # Install TensorRT from NVIDIA's PyPI
 RUN python3 -m pip install --upgrade pip && \
-    pip install tensorrt==10.6.0 --extra-index-url https://pypi.nvidia.com
+    pip install tensorrt==10.9.0.34 --extra-index-url https://pypi.nvidia.com
 
 # Clone and install FaceFusion
 RUN git clone https://github.com/facefusion/facefusion.git --branch ${FACEFUSION_VERSION} --single-branch . && \
