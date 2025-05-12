@@ -20,6 +20,7 @@ RUN apt-get update && \
         curl \
         ffmpeg \
         nano \
+    && python3 -m pip install --upgrade pip \
     && rm -rf /var/lib/apt/lists/*
 
 # Install TensorRT from NVIDIA's PyPI
